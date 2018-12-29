@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Pacman Demo</title>
+
+    <!--CSS My Style-->
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto"
+      rel="stylesheet"
+    />
+    <!--JS JQuery-->
+    <script
+      src="https://code.jquery.com/jquery-3.0.0.min.js"
+      integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0="
+      crossorigin="anonymous"
+    ></script>
+    
+    
+  </head>
+  
+  <body>
+   <div class="gameInfo">
+      <div id="score"></div>
+      <div id="time"></div>
+    </div>
+  
+    <button
+      id="startButton"
+      type="button"
+      class="newGame"
+      onclick="document.location.reload();"
+    >
+      NEW GAME
+    </button>
+<div class = "wrapper">
+    <div class="gameFill">
+      <div id="container"></div>
+      <div id="world"></div>
+
+      <div id="pacman"></div>
+
+      <div id="ghost"></div>
+
+      <div id="gameover"></div>
+      <div id="wingame"></div>
+      <div class="containerButton">
+      <div class="upRadButton">
+      <button   class=" moveButton" id="btn-down">UP</button>
+      </div>
+      <div class="lrd" >
+          <button  class=" moveButton" id="btn-left">L</button>
+          <button  class=" moveButton" id="btn-right">R</button>          
+      </div>
+      <div class="downRadButton">
+        <button class=" moveButton" id="btn-up">D</button>
+      </div>
+    </div>
+    </div>
+  </div>
+  
+  <script src="js/app.js"></script> 
+  </body>
+</html>

@@ -1,0 +1,380 @@
+body {
+  background-color: black;
+  padding: 0px;
+  margin: 0px;
+  font-family: "Roboto", sans-serif;
+}
+
+/*WORLD SETUP*/
+div.row {
+  height: 20px;
+}
+div.row div {
+  width: 20px;
+  height: 20px;
+  /*    border: 1px solid black;*/
+  display: inline-block;
+  margin: 0px;
+}
+
+/*BRICKS*/
+div.brick {
+  background-color: blue;
+}
+div.left {
+  border-top-right-radius: 100%;
+  border-bottom-right-radius: 100%;
+}
+div.right {
+  border-top-right-radius: 100%;
+  border-bottom-right-radius: 100%;
+}
+div.top {
+  border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
+}
+div.bottom {
+  border-bottom-left-radius: 100%;
+  border-bottom-right-radius: 100%;
+}
+div.lefttop {
+  border-top-left-radius: 100%;
+}
+div.leftbottom {
+  border-bottom-left-radius: 100%;
+}
+div.righttop {
+  border-top-right-radius: 100%;
+}
+div.rightbottom {
+  border-bottom-right-radius: 100%;
+}
+
+/*DYNAMIC CONTENT*/
+div.coin {
+  background-image: url(../img/coin.gif);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 5px;
+}
+div.cherries {
+  background-image: url(../img/cherries.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+/*PACMAN*/
+div#pacman {
+  background-color: transparent;
+  background-image: url(../img/pacman.gif);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 20px;
+  height: 20px;
+  transition: left 0.2s linear, top 0.2s linear;
+  position: absolute;
+}
+/*GHOST*/
+div#ghost {
+  background-image: url(../img/ghost.gif);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+  transition: left 0.5s linear, top 0.5s linear;
+  position: absolute;
+}
+/*SCORE*/
+div#score {
+  width: 350px;
+  height: 30px;
+  color: white;
+  padding: 7px;
+  text-align: center;
+  top: 10px;
+  left: 450px;
+}
+
+div#time {
+  width: 350px;
+  height: 30px;
+  color: white;
+  padding: 7px;
+  text-align: center;
+  top: 10px;
+  left: 450px;
+}
+
+/*PACMAN MOVEMENTS*/
+.down {
+  -ms-transform: rotate(-90deg); /* IE 9 */
+  -webkit-transform: rotate(-90deg); /* Safari */
+  transform: rotate(-90deg);
+}
+.up {
+  -ms-transform: rotate(90deg); /* IE 9 */
+  -webkit-transform: rotate(90deg); /* Safari */
+  transform: rotate(90deg);
+}
+.right {
+}
+.left {
+  -ms-transform: rotate(-180deg); /* IE 9 */
+  -webkit-transform: rotate(-180deg); /* Safari */
+  transform: rotate(-180deg);
+}
+
+/*GAME OVER*/
+#gameover {
+  background-image: url(../img/gameover.jpg);
+  background-size: cover;
+  background-color: black;
+  background-position: center;
+  border: 30px solid red;
+  width: 360px;
+  height: 240px;
+  display: none;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+#wingame {
+  background-image: url(../img/win.png);
+  background-size: cover;
+  background-color: black;
+  background-position: center;
+  border: 30px solid red;
+  width: 360px;
+  height: 240px;
+  display: none;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+.gameInfo {
+  display: flex;
+  font-size: 30px;
+  width: 750px;
+  height: 40px;
+  margin: auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.newGame {
+  font-family: -apple-system;
+  font-size: 30px;
+  font-weight: bold;
+  border: none;
+  background-color: yellow;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  width: 270px;
+  height: 50px;
+  margin: auto;
+  margin-bottom: 40px;
+}
+
+
+
+.moveButton{
+  width: 60px;
+  height: 60px;
+  background-color: red;
+  border: none;
+  border-radius: 50%;
+}
+
+
+.containerButton{
+  margin: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.containerButton button{
+    margin: 7px;
+}
+
+.upRadButton{
+  margin: auto;
+}
+
+.downRadButton{
+  margin: auto;
+}
+
+.containerButton button{
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  margin: 15px;
+  font-size: 20px;
+}
+
+.lrd{
+  margin: auto;
+}
+
+.lrd button{
+  margin: 0 43px 0 43px
+}
+
+@media (max-width: 420px) {
+  .gameFill {
+    transform: translateX(calc((420px - 420px * 0.8) / -2)) scale(0.8) !important;
+  }
+  .wrapper {
+    left: calc(50% - (420px * 0.8) / 2) !important;
+  }
+
+
+  .wrapper{
+    height: 290px;
+    width: 336px;
+  }
+
+  .gameInfo {
+    display: flex;
+    flex-direction: column;
+    font-size: 27px;
+    width: 300px;
+    height: 100px;
+    margin: auto;
+    margin-top: 20px;
+  }
+
+  div #score {
+    width: 300px;
+    height: 40px;
+    color: white;
+    padding: 0;
+    text-align: center;    
+  }
+  
+  div #time {
+    width: 300px;
+    height: 40px;
+    color: white;
+    padding: 0;
+    text-align: center;
+  }
+
+  .newGame {    
+    font-size: 23px;
+    background-color: yellow;
+    width: 200px;
+    height: 40px;
+    margin: auto;   
+  }
+
+  .moveButton{
+    width: 90px;
+    height: 90px;
+  }
+  
+  .containerButton{
+    margin: 30px;    
+  }
+  
+  .containerButton button{      
+      margin: 3px;
+      font-size: 30px;
+  }
+
+  .lrd button{
+    margin: 0 43px 0 43px;
+  }
+  
+
+}
+
+@media (max-width: 340px) {
+  .gameFill {
+    transform: translateX(calc((420px - 420px * 0.6) / -2)) scale(0.6) !important;
+  }
+  .wrapper {
+    left: calc(50% - (420px * 0.6) / 2) !important;
+  }
+
+  .wrapper{
+    height: 230px;
+    width: 252px;
+  }
+
+  .gameInfo {
+    display: flex;
+    flex-direction: column;
+    font-size: 27px;
+    width: 320px;
+    height: 100px;
+    margin: 0;
+    margin-top: 20px;
+  }
+
+  div #score {
+    width: 320px;
+    height: 40px;
+    color: white;
+    padding: 0;
+    text-align: center;    
+  }
+  
+  div #time {
+    width: 320px;
+    height: 40px;
+    color: white;
+    padding: 0;
+    text-align: center;
+  }
+
+  .newGame {    
+    font-size: 23px;
+    background-color: yellow;
+    width: 200px;
+    height: 40px;
+    margin: auto;   
+  }
+
+  .moveButton{
+    width: 90px;
+    height: 90px;
+  }
+  
+  .containerButton{
+    margin: 30px;    
+  }
+  
+  .containerButton button{      
+      margin: 3px;
+      font-size: 30px;
+  }
+
+  .lrd button{
+    margin: 0 43px 0 43px;
+  }
+
+}
+
+.gameFill {
+  position: relative;
+  width: 420px;
+  height: 100%;
+  transform: translateX(calc((420px - 420px * 1) / -2)) scale(1);
+}
+
+.wrapper {
+  position: absolute;
+  left: calc(50% - (420px * 1) / 2);
+}
